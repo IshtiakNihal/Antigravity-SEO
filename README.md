@@ -1,52 +1,208 @@
+<!--
+  Antigravity SEO (antigravity-seo): free, open-source SEO, GEO, AEO & Technical Audit skill for Google Antigravity.
+  Technical SEO, Core Web Vitals, E-E-A-T, Schema.org, AI search (GEO), local SEO, e-commerce, and international SEO.
+  26 sub-skills and 19 specialist agents. MIT licensed.
+-->
+
+<img src="assets/readme/v3/hero.svg" width="1200" height="420" alt="Antigravity SEO: rank in Google, get cited by AI. Three bots climb from #48 to #1 by fixing crawl, speed, schema, AI access, and authority, then Google, ChatGPT, Perplexity, Gemini, and Claude cite the site." />
+
 <h1 align="center">Antigravity SEO</h1>
 
 <p align="center">
-  <b>The open-source SEO, GEO, AEO & Ecommerce Optimization Skill for Google Antigravity.</b><br />
-  Rank higher in Google Search, win AI Overviews, and get cited by ChatGPT, Perplexity, Gemini, and Copilot.
+  <b>Free, open-source SEO audits and optimization framework for <a href="https://github.com/IshtiakNihal/Antigravity-SEO">Google Antigravity</a>.</b><br />
+  Rank higher in Google Search and get cited by AI engines (ChatGPT, Perplexity, Gemini, Copilot).
 </p>
 
 <p align="center">
-  <a href="#quick-install">Install</a> ·
-  <a href="#features">Features</a> ·
+  <a href="#install">Install</a> ·
+  <a href="#see-it-in-action">Demo</a> ·
+  <a href="#real-results">Results</a> ·
+  <a href="#meet-the-team">Team</a> ·
   <a href="#commands">Commands</a> ·
-  <a href="#architecture">Architecture</a> ·
-  <a href="#ecommerce-excellence">Ecommerce</a> ·
-  <a href="#geo--aeo">GEO & AEO</a> ·
-  <a href="#contributing">Contributing</a>
+  <a href="#pricing">Comparison</a> ·
+  <a href="#faq">FAQ</a>
 </p>
 
 <p align="center">
+  <a href="https://github.com/IshtiakNihal/Antigravity-SEO/actions/workflows/ci.yml"><img src="https://github.com/IshtiakNihal/Antigravity-SEO/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
   <img src="https://img.shields.io/badge/Google%20Antigravity-Skill-4285F4?style=flat&logo=google" alt="Google Antigravity Skill" />
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" />
-  <img src="https://img.shields.io/badge/Schema.org-Compliant-blue" alt="Schema.org" />
-  <img src="https://img.shields.io/badge/Anti--AI%20Tone-Enforced-orange" alt="Anti-AI Tone" />
-  <img src="https://img.shields.io/badge/GEO%20Ready-ChatGPT%20%7C%20Gemini%20%7C%20Perplexity-purple" alt="GEO Ready" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" /></a>
+  <a href="tests/"><img src="https://img.shields.io/badge/tests-11%20passing-brightgreen" alt="Tests" /></a>
+  <a href="SECURITY.md"><img src="https://img.shields.io/badge/Security-SSRF%20Protected-blue" alt="Security" /></a>
+  <a href="PRIVACY.md"><img src="https://img.shields.io/badge/Privacy-100%25%20Local-purple" alt="Privacy" /></a>
 </p>
 
 ---
 
 ## What is Antigravity SEO?
 
-**Antigravity SEO** is a complete, modular, battle-tested SEO framework designed specifically for **Google Antigravity** (and compatible with Claude Code / Cursor agent systems). Inspired by modern AI search architectures and engineered for high-converting ecommerce stores, enterprise publishers, and agency audits.
+**Antigravity SEO** is a complete, modular, battle-tested SEO framework designed specifically for **Google Antigravity** (and compatible with Cursor, Claude Code, and Codex agent systems). 
 
-Traditional SEO alone is no longer enough. Modern organic acquisition requires **Four Core Pillars**:
-1. **Traditional Technical SEO:** Clean crawlability, canonicals, sitemaps, single-H1 heading hierarchy, and PageSpeed.
-2. **Ecommerce Catalog Integrity:** Price completeness, unique SKU management, leaf categories, and conversion trust badges.
-3. **GEO (Generative Engine Optimization):** High entity density and structured HTML tables so ChatGPT Search, Perplexity, and Gemini cite your products and answers.
-4. **AEO (Answer Engine Optimization):** Structured 10-FAQ clusters with upfront 1–2 sentence direct factual answers optimized for Google AI Overviews and Featured Snippets.
+Give it any website or URL and it runs a full multi-agent SEO audit in minutes, then hands you a prioritized action plan sorted by what matters most.
+
+It covers everything modern search engines and AI answer engines demand:
+
+- **Technical SEO:** Crawlability, indexing, sitemaps, robots.txt, canonical loops, redirect chains, and Core Web Vitals (LCP, INP, CLS).
+- **Content Quality & E-E-A-T:** Experience, expertise, authority, and trust. Evaluates depth, reading levels, and purges robotic AI fluff.
+- **Structured Data:** Detects, validates, and writes Schema.org JSON-LD markup (`Product`, `Article`, `Organization`, `LocalBusiness`, `FAQPage`).
+- **AI Search (GEO):** Evaluates how likely **Google AI Overviews**, **ChatGPT Search**, **Perplexity**, **Gemini**, and **Copilot** are to cite your pages.
+- **Answer Engine Optimization (AEO):** Implements the high-intent 10-FAQ formula with upfront 1–2 sentence direct factual answers.
+- **E-Commerce & SaaS:** Catalog integrity, unique SKU management, multi-currency support, conversion trust badges, and feature comparison matrices.
+- **Local & Maps SEO:** Google Business Profile audits, map pack visibility, local citations, and NAP consistency.
+
+Antigravity SEO is built from **26 sub-skills** and **19 specialist agents**. Up to 17 agents work on your site in parallel, providing reproducible evidence for every single fix.
 
 ---
 
-## Quick Install
+## See it in Action
 
-### Method 1: Automatic Installer (Recommended)
+Type `/seo` in Antigravity to see available workflows:
 
-#### For Windows (PowerShell):
+![Antigravity SEO command demo](screenshots/seo-command-demo.gif)
+
+Run a full audit and watch the agents fan out across your website:
+
+![Antigravity SEO multi-agent audit demo](screenshots/seo-audit-demo.gif)
+
+---
+
+## Real Results
+
+Audited and optimized with the Antigravity SEO methodology: 10.8K Google Search Console clicks in the first 12 weeks, high AI search citability across Gemini & Perplexity, and a 99 mobile PageSpeed score.
+
+<img src="assets/readme/screen.svg" width="1200" height="751" alt="Real results: Google Search Console clicks alongside PageSpeed performance score of 99 and 100 for SEO." />
+
+---
+
+## Meet the Team
+
+<img src="assets/readme/v3/team.svg" width="1200" height="420" alt="The Antigravity SEO team: 19 specialist agents working in parallel across your site." />
+
+<details>
+<summary><b>View All 19 Specialist Agents</b></summary>
+<br />
+
+| Agent | Role | Focus | Primary Command |
+|---|---|---|---|
+| `seo-technical` | Technical SEO Lead | Crawl, indexing, status codes, canonicals | `/seo technical <url>` |
+| `seo-content` | Content & E-E-A-T Editor | Topic depth, information gain, anti-AI tone | `/seo content <url>` |
+| `seo-schema` | Structured Data Engineer | Schema.org JSON-LD generation & validation | `/seo schema <url>` |
+| `seo-geo` | AI Search Analyst | AI Overviews, citability, entity density | `/seo geo <url>` |
+| `seo-aeo` | Answer Engine Architect | 10-FAQ formula with upfront direct answers | `/seo aeo <topic>` |
+| `seo-sitemap` | Sitemap Architect | XML sitemap discovery, partition health | `/seo sitemap <url>` |
+| `seo-performance` | Performance Engineer | Core Web Vitals, script blocking, LCP/INP | `/seo audit <url>` |
+| `seo-ecommerce` | Commerce Specialist | Catalog integrity, unique SKUs, product schema | `/seo ecommerce <url>` |
+| `seo-local` | Local SEO Specialist | Google Business Profile, local citations | `/seo local <url>` |
+| `seo-maps` | Maps Intelligence Analyst | Geo-grid ranking, map pack visibility | `/seo maps <query>` |
+| `seo-google` | Google API Analyst | Search Console, CrUX, PageSpeed, Indexing API | `/seo google [cmd]` |
+| `seo-backlinks` | Link Analyst | Backlink profiles, Common Crawl, Moz, Bing | `/seo backlinks <url>` |
+| `seo-cluster` | Topic Strategist | Semantic clustering, pillar-cluster linking | `/seo cluster <keyword>` |
+| `seo-competitor` | Competitive Analyst | Competitor comparison pages, feature matrices | `/seo competitor-pages` |
+| `seo-sxo` | Search Experience Designer | Intent alignment, UX conversion, persona flow | `/seo sxo <url>` |
+| `seo-drift` | Change Monitor | SQLite snapshot baselines, ranking drift | `/seo drift <cmd>` |
+| `seo-agentic` | Agent Readiness Analyst | llms.txt, WebMCP, accessibility tree | `/seo agentic <url>` |
+| `seo-programmatic` | Programmatic Architect | Scalable URL patterns, database templates | `/seo programmatic` |
+| `seo-hreflang` | International SEO | Multi-language tags, regional routing | `/seo hreflang <url>` |
+
+</details>
+
+---
+
+## Commands
+
+<img src="assets/readme/v3/map.svg" width="1200" height="420" alt="The groups of SEO commands: audits, technical SEO, content, schema and AI search, local and commerce, and extensions." />
+
+Antigravity SEO includes 30 commands grouped into six operational categories:
+
+<details>
+<summary><b>1. Audits & Planning (5 commands)</b></summary>
+
+* `/seo audit <url>`: Full website multi-agent parallel audit.
+* `/seo page <url>`: Deep single-page technical and content analysis.
+* `/seo plan <business-type>`: Strategic SEO planning (saas, local, ecommerce, publisher, agency).
+* `/seo doctor`: Check environment and tool readiness.
+* `/seo setup`: Refresh Python runtime dependencies and browser binaries.
+</details>
+
+<details>
+<summary><b>2. Technical SEO & Performance (7 commands)</b></summary>
+
+* `/seo technical <url>`: Comprehensive crawlability, indexing, and heading audit.
+* `/seo sitemap <url>`: XML sitemap discovery, partition validation, and lastmod health.
+* `/seo images <url>`: Image optimization, WebP/AVIF format, and alt-text checks.
+* `/seo hreflang <url>`: International SEO and language targeting validation.
+* `/seo programmatic <plan>`: Scalable programmatic architecture and URL blueprints.
+* `/seo google [command]`: Search Console, PageSpeed, CrUX, and Indexing API queries.
+* `/seo drift baseline | compare <url>`: Track ranking and content changes with SQLite baselines.
+</details>
+
+<details>
+<summary><b>3. Content, E-E-A-T & Humanizer (6 commands)</b></summary>
+
+* `/seo content <url>`: E-E-A-T and content quality scoring.
+* `/seo content-brief <topic>`: Generate comprehensive content briefs with keywords and outlines.
+* `/seo cluster <keyword>`: SERP-based semantic topic clustering.
+* `/seo sxo <url>`: Search Experience Optimization for user stories and intent.
+* `/seo competitor-pages <url>`: Competitor comparison page matrix generation.
+* `/seo humanize <text>`: Purge robotic AI clichés and enhance factual information gain.
+</details>
+
+<details>
+<summary><b>4. Schema & AI Search / GEO (3 commands)</b></summary>
+
+* `/seo schema <url>`: Detect, validate, and generate Schema.org JSON-LD.
+* `/seo geo <url>`: Generative Engine Optimization for ChatGPT, Perplexity, Gemini, and Copilot.
+* `/seo aeo <topic>`: Answer Engine Optimization with the 10-FAQ formula for AI Overviews.
+</details>
+
+<details>
+<summary><b>5. Local, Commerce & Links (4 commands)</b></summary>
+
+* `/seo ecommerce <url>`: E-commerce catalog integrity, pricing, SKU, and schema audit.
+* `/seo local <url>`: Local SEO, Google Business Profile, and NAP verification.
+* `/seo maps <query>`: Local pack and geo-grid visibility intelligence.
+* `/seo backlinks <url>`: Domain backlink profile analysis.
+</details>
+
+<details>
+<summary><b>6. Agentic & Future-Proofing (5 commands)</b></summary>
+
+* `/seo agentic <url>`: AI agent readiness (`llms.txt`, WebMCP, markdown accessibility).
+* `/seo flow [stage]`: Evidence-based FLOW methodology prompts.
+* `/seo titles <keywords>`: High-CTR title tag and meta description engineering.
+* `/seo bing [command]`: Bing Webmaster Tools & IndexNow instant submissions.
+* `/seo unlighthouse <url>`: Multi-page batch Lighthouse audits.
+</details>
+
+---
+
+## Comparison: Why Antigravity SEO?
+
+<img src="assets/readme/v3/shop.svg" width="1200" height="420" alt="Comparison: Manual SEO vs Hiring an Agency vs Software vs Antigravity SEO." />
+
+| Feature | Manual Consulting | Traditional Agency | Legacy SaaS Tools | **Antigravity SEO** |
+|---|---|---|---|---|
+| **Audit Duration** | 4 to 8 hours | 2 to 4 weeks | 15 to 45 minutes | **5 to 10 minutes** |
+| **Cost** | Hourly billing | $3,000–$15,000 / mo | $99–$999 / mo | **100% Free & Open-Source** |
+| **AI Search (GEO/AEO)** | Rare | Often outdated | Behind curve | **Native AI Overview & LLM Citations** |
+| **Data Privacy** | Manual | Shared with vendor | Uploaded to cloud | **100% Local on your machine** |
+| **Actionable Fixes** | High variability | Slide decks | CSV warning dump | **Exact code diffs & verified JSON-LD** |
+| **Verification Gate** | None | Ad-hoc | None | **Every fix has falsifiable test criteria** |
+
+---
+
+## Install
+
+<img src="assets/readme/v3/install.svg" width="1200" height="420" alt="Installing Antigravity SEO: add skill, 26 skills and 19 agents arrive." />
+
+### Method 1: Automatic 1-Click Install
+
+#### Windows (PowerShell):
 ```powershell
 irm https://raw.githubusercontent.com/IshtiakNihal/Antigravity-SEO/main/install.ps1 | iex
 ```
 
-#### For Linux / macOS (Bash):
+#### macOS / Linux (Bash):
 ```bash
 curl -fsSL https://raw.githubusercontent.com/IshtiakNihal/Antigravity-SEO/main/install.sh | bash
 ```
@@ -57,98 +213,36 @@ Clone directly into your Antigravity global configuration:
 git clone https://github.com/IshtiakNihal/Antigravity-SEO.git ~/.gemini/config/skills/antigravity-seo
 ```
 
-Once installed, the `antigravity-seo` skill is immediately available to your Antigravity agent across any workspace!
+Once installed, the `antigravity-seo` skill is immediately recognized and available across all workspaces!
 
 ---
 
-## Commands & Capabilities
+## Open-Source Standards & Governance
 
-In Antigravity, you can activate this skill by prompting your agent naturally or typing:
+Antigravity SEO is built to the highest open-source engineering standards:
 
-| Command / Trigger | Action | Output Deliverable |
-|---|---|---|
-| `/seo audit <url>` | Full-site or single-page technical audit | Pass/Fail score across 9 categories & blocker list |
-| `/seo ecommerce <url or catalog>` | Catalog integrity & shopping visibility check | Price, SKU, variation, and schema report |
-| `/seo geo <url>` | Generative Engine Optimization analysis | Citability score (0–100) and entity density breakdown |
-| `/seo aeo <topic or url>` | Answer Engine Optimization builder | 10 high-intent FAQs with upfront direct answers |
-| `/seo schema <url>` | Schema.org JSON-LD generation & validation | Validated `Product`, `Offer`, `BreadcrumbList`, `FAQPage` |
-| `/seo titles <keywords>` | High-CTR Title & Meta Description engineering | Commercial meta templates with exact price and warranty hooks |
-| `/seo sitemap <domain>` | XML Sitemap discovery & health check | Partition status and lastmod consistency report |
-| `/seo humanize <text>` | Anti-AI content audit | Fluff-word purifier and factual density enhancer |
-
----
-
-## Architecture & Sub-Skills
-
-```text
-Antigravity-SEO/
-├── skills/
-│   ├── seo/                 # Master Orchestrator Skill
-│   ├── seo-ecommerce/       # Catalog Integrity & Product Page Optimization
-│   ├── seo-geo/             # Generative Engine Optimization (AI Citations)
-│   ├── seo-aeo/             # Answer Engine Optimization (AI Overviews & Snippets)
-│   ├── seo-schema/          # Schema.org JSON-LD Generation & Validation
-│   ├── seo-technical/       # Crawlability, Canonicals & Core Web Vitals
-│   ├── seo-content/         # E-E-A-T, Information Gain & Anti-AI Humanizer
-│   └── seo-sitemap/         # XML Sitemap Discovery & Partition Monitoring
-├── agents/                  # Specialist Agent Definitions
-│   ├── seo-technical.md     # Technical SEO Lead
-│   ├── seo-ecommerce.md     # Ecommerce Specialist
-│   ├── seo-geo.md           # AI Search & Entity Analyst
-│   └── seo-aeo.md           # Answer & Featured Snippet Architect
-├── scripts/                 # Standalone Python / Node Utility Scripts
-│   ├── catalog_audit.py     # Fast catalog scanner for ৳0 prices and missing SKUs
-│   ├── geo_scorer.py        # Entity density & citability calculation algorithm
-│   ├── schema_validate.py   # Schema.org validator
-│   └── sitemap_checker.py   # Sitemap crawler & health auditor
-├── tests/                   # Automated pytest suite
-├── install.ps1              # Windows 1-click installer
-├── install.sh               # Unix 1-click installer
-└── README.md
-```
-
----
-
-## Ecommerce Commercial Excellence
-
-E-commerce stores cannot convert visitors if basic commercial facts are broken. Antigravity SEO enforces:
-
-* **Zero-Price Detection:** Immediately flags any product with price `0` or empty price that prevents checkout.
-* **SKU Integrity:** Ensures every simple product and child variation has a standardized, unique SKU (`MJ-[ID]`).
-* **Title Duplication Prevention:** Separates CMS product names from HTML `<title>` tags, avoiding repetitive spam titles (e.g. `Model Price in BD Price in BD | Store`).
-* **Conversion Trust Elements:** Injects verified warranty badges (official brand vs replacement coverage) and estimated delivery timelines.
-* **Mobile Viewport Discipline:** Ensures upper buying summary contains 3–5 bullet points, reserving 2-column HTML specification tables for the description tab.
-
----
-
-## GEO & AEO: The Future of Search
-
-### Generative Engine Optimization (GEO)
-AI engines do not read marketing adjectives. They look for:
-* **High Entity Density:** Exact dimensions, mAh capacities, wattage ratings, motor RPM, Bluetooth versions, and audio codecs.
-* **Structured HTML Tables:** LLMs prioritize 2-column clean `<table>` layouts when synthesizing comparative answers (e.g., *"Compare Model A vs Model B"*).
-* **Anti-AI Tone:** Detects and removes generic robotic filler (*"revolutionary"*, *"game-changer"*, *"delve into"*, *"testament to"*).
-
-### Answer Engine Optimization (AEO)
-Google's AI Overviews and Featured Snippets favor the **10 FAQ Formula**:
-* 10 distinct questions answering genuine buyer objections.
-* **Upfront Direct Answer:** Every answer begins with an immediate, factual 1–2 sentence answer before explaining technical details.
+* **[LICENSE (MIT)](LICENSE):** Free for personal, agency, enterprise, and commercial use.
+* **[SECURITY.md](SECURITY.md):** Rigorous threat modeling, SSRF protection against internal networks, and 90-day coordinated disclosure.
+* **[PRIVACY.md](PRIVACY.md):** 100% local processing, zero telemetry, zero user data tracking.
+* **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md):** Contributor Covenant v2.1 for a welcoming, inclusive community.
+* **[CONTRIBUTING.md](CONTRIBUTING.md):** Development setup, PR guidelines, and testing checklists.
 
 ---
 
 ## Contributing
 
-We welcome contributions from the open-source community! 
-1. Fork the repo.
-2. Create a feature branch (`git checkout -b feature/amazing-skill`).
-3. Commit your changes (`git commit -m 'feat: add new crawler tool'`).
-4. Push to the branch (`git push origin feature/amazing-skill`).
-5. Open a Pull Request.
+We welcome contributions from the global AI and SEO developer community!
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/awesome-auditor`).
+3. Run unit tests (`python -m unittest discover tests`).
+4. Commit your changes (`git commit -m 'feat: add new schema validator'`).
+5. Push to the branch (`git push origin feature/awesome-auditor`).
+6. Open a Pull Request.
 
 ---
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
-Maintained with ❤️ by **Ishtiak Nihal** for the global Google Antigravity & AI developer community.
+Maintained with ❤️ by **Ishtiak Nihal** for the worldwide Google Antigravity & AI developer community.

@@ -98,3 +98,4 @@ if __name__ == "__main__":
     print(f"Self-test GEO Citability Score: {res['geo_citability_score']}/100 ({res['rating']})")
     for fb in res['feedback']:
         print(f"  - {fb}")
+

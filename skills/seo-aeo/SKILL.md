@@ -22,3 +22,4 @@ Every entity, product, or buying guide must feature 10 distinct, model-specific 
 
 ## Upfront Direct Answer Architecture
 Every answer begins with an immediate, factual 1–2 sentence answer before explaining technical details.
+

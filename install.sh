@@ -24,3 +24,4 @@ fi
 echo ""
 echo "Antigravity SEO Skill installed successfully!"
 echo "The skill is now globally available in Google Antigravity."
+

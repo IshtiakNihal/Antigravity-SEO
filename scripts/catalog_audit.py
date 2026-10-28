@@ -1,12 +1,22 @@
 #!/usr/bin/env python3
 """
 Catalog Integrity Auditor
-Checks an ecommerce catalog for ৳0/empty prices, missing SKUs, and keyword-stuffed titles.
+Checks an ecommerce catalog for zero/missing prices, empty SKUs, missing images,
+and keyword-stuffed product names.
 """
 
 import sys
 import json
 import re
+
+KEYWORD_STUFFING_PATTERNS = [
+    r"\bprice\s+in\b",
+    r"\bbuy\s+online\b",
+    r"\bfree\s+shipping\b",
+    r"\bcheap\s+price\b",
+    r"\bbest\s+deal\b",
+    r"\bdiscount\s+code\b"
+]
 
 def audit_product(product):
     issues = []
@@ -29,8 +39,10 @@ def audit_product(product):
         
     # 3. Title check
     name = product.get("name", "")
-    if "price in bangladesh" in name.lower() or "price in bd" in name.lower():
-        warnings.append("WARNING: Keyword stuffed into product title (use SEO title tag instead)")
+    for pat in KEYWORD_STUFFING_PATTERNS:
+        if re.search(pat, name, re.IGNORECASE):
+            warnings.append(f"WARNING: Commercial keyword stuffed into product title: '{re.search(pat, name, re.IGNORECASE).group(0)}' (use HTML title tag instead)")
+            break
         
     # 4. Brand check
     brands = product.get("brands", [])
@@ -71,3 +83,4 @@ if __name__ == "__main__":
         res = audit_product(sample)
         print("Self-test result:")
         print(json.dumps(res, indent=2))
+

@@ -107,3 +107,4 @@ if __name__ == "__main__":
         res = parse_sitemap_xml(sample_xml)
         print("Self-test Sitemap Index Parse Result:")
         print(json.dumps(res, indent=2))
+

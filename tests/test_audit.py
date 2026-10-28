@@ -18,7 +18,8 @@ from catalog_audit import audit_product
 from geo_scorer import calculate_geo_score
 from schema_validate import validate_product_schema
 from sitemap_checker import parse_sitemap_xml
-from meta_generator import generate_meta
+from meta_generator import generate_ecommerce_meta, generate_saas_meta
+from url_safety import is_safe_url
 
 
 class TestAntigravitySEO(unittest.TestCase):
@@ -26,11 +27,11 @@ class TestAntigravitySEO(unittest.TestCase):
     def test_catalog_audit_valid(self):
         product = {
             "id": 101,
-            "name": "QCY Crossky C30 Earphones",
-            "sku": "MJ-101",
-            "price": 2850,
-            "brands": ["QCY"],
-            "images": [{"id": 1, "alt": "QCY C30"}]
+            "name": "Wireless Noise Cancelling Headphones",
+            "sku": "SKU-101",
+            "price": 249.99,
+            "brands": ["Sony"],
+            "images": [{"id": 1, "alt": "Headphones"}]
         }
         res = audit_product(product)
         self.assertEqual(res["status"], "PASS")
@@ -51,6 +52,18 @@ class TestAntigravitySEO(unittest.TestCase):
         self.assertTrue(any("SKU is empty" in i for i in res["issues"]))
         self.assertTrue(any("No images" in i for i in res["issues"]))
 
+    def test_catalog_audit_keyword_stuffing_warning(self):
+        product = {
+            "id": 103,
+            "name": "Running Shoes Buy Online Free Shipping",
+            "sku": "SHOE-01",
+            "price": 89,
+            "brands": ["Nike"],
+            "images": [{"id": 1, "alt": "Shoes"}]
+        }
+        res = audit_product(product)
+        self.assertTrue(any("Commercial keyword stuffed" in w for w in res["warnings"]))
+
     def test_geo_scorer_high_citability(self):
         html = """
         <h2>Technical Specifications</h2>
@@ -62,7 +75,7 @@ class TestAntigravitySEO(unittest.TestCase):
           <tr><td>Weight</td><td>185g</td></tr>
           <tr><td>Warranty</td><td>12 Months Official Warranty</td></tr>
         </table>
-        <h3>FAQ</h3>
+        <h3>Frequently Asked Questions</h3>
         <ol>
           <li><strong>Is it compatible with Type-C?</strong> Yes, full USB-C fast charging support.</li>
           <li><strong>Does it include warranty?</strong> Yes, 12 Months Official Warranty is included.</li>
@@ -85,13 +98,13 @@ class TestAntigravitySEO(unittest.TestCase):
         valid_schema = {
             "@context": "https://schema.org",
             "@type": "Product",
-            "name": "QCY Pulse PB10H Power Bank",
-            "image": "https://example.com/pb10h.webp",
-            "description": "10000mAh 22.5W Power Bank with 3 built-in cables.",
+            "name": "Sony WH-1000XM5 Headphones",
+            "image": "https://example.com/xm5.webp",
+            "description": "Industry-leading noise cancelling wireless headphones.",
             "offers": {
                 "@type": "Offer",
-                "price": "1950",
-                "priceCurrency": "BDT",
+                "price": "399.99",
+                "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock"
             }
         }
@@ -114,29 +127,55 @@ class TestAntigravitySEO(unittest.TestCase):
         sample_index = """<?xml version="1.0" encoding="UTF-8"?>
         <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <sitemap>
-                <loc>https://minjotech.com/product-sitemap1.xml</loc>
+                <loc>https://example.com/product-sitemap.xml</loc>
                 <lastmod>2026-10-28T14:00:00+00:00</lastmod>
             </sitemap>
         </sitemapindex>"""
         parsed = parse_sitemap_xml(sample_index)
         self.assertEqual(parsed["type"], "index")
         self.assertEqual(parsed["count"], 1)
-        self.assertEqual(parsed["entries"][0]["loc"], "https://minjotech.com/product-sitemap1.xml")
+        self.assertEqual(parsed["entries"][0]["loc"], "https://example.com/product-sitemap.xml")
 
-    def test_meta_generator(self):
-        meta = generate_meta(
-            brand="LDNIO",
-            model="Q17 100W GaN Desktop Charger",
-            category="Charger",
-            price="3990",
-            warranty="12 Months Official",
-            site_name="MinjoTech BD"
+    def test_meta_generator_ecommerce(self):
+        meta = generate_ecommerce_meta(
+            brand="Anker",
+            model="Prime 250W Power Bank",
+            category="Charging",
+            price="179.99",
+            currency="$",
+            warranty="24 Months",
+            site_name="TechHQ"
         )
         self.assertEqual(meta["title_status"], "OPTIMAL")
         self.assertEqual(meta["meta_description_status"], "OPTIMAL")
-        self.assertTrue("Price in Bangladesh" in meta["title"] or "Price in BD" in meta["title"])
-        self.assertIn("3990", meta["meta_description"])
-        self.assertIn("12 Months Official", meta["meta_description"])
+        self.assertIn("Anker", meta["title"])
+        self.assertIn("$179.99", meta["meta_description"])
+        self.assertIn("24 Months", meta["meta_description"])
+
+    def test_meta_generator_saas(self):
+        meta = generate_saas_meta(
+            product_name="FlowGrid",
+            primary_benefit="AI Agentic Workflow Orchestration",
+            target_audience="Developers",
+            site_name="FlowGrid"
+        )
+        self.assertEqual(meta["title_status"], "OPTIMAL")
+        self.assertEqual(meta["meta_description_status"], "OPTIMAL")
+        self.assertIn("FlowGrid", meta["title"])
+        self.assertIn("free trial", meta["meta_description"])
+
+    def test_url_safety_blocks_ssrf(self):
+        safe, _ = is_safe_url("http://127.0.0.1:8080/metrics")
+        self.assertFalse(safe)
+
+        safe, _ = is_safe_url("http://169.254.169.254/latest/meta-data/")
+        self.assertFalse(safe)
+
+        safe, _ = is_safe_url("http://localhost/admin")
+        self.assertFalse(safe)
+
+        safe, _ = is_safe_url("ftp://ftp.example.com")
+        self.assertFalse(safe)
 
 
 if __name__ == "__main__":

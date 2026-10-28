@@ -22,3 +22,4 @@ if (Test-Path $TargetDir) {
 Write-Host "`nAntigravity SEO Skill installed successfully!" -ForegroundColor Green
 Write-Host "The skill is now globally available in Google Antigravity." -ForegroundColor White
 Write-Host "You can invoke it by asking Antigravity to run an SEO, GEO, AEO, or Ecommerce audit." -ForegroundColor White
+

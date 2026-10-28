@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Stable entry point for bundled Python tools in Google Antigravity.
+launcher_dir="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+runtime="${launcher_dir}/runtime.py"
+
+if [[ ! -f "${runtime}" ]]; then
+    echo "Antigravity SEO runtime is missing. Reinstall Antigravity SEO." >&2
+    exit 2
+fi
+
+min_minor=10
+max_minor=14
+
+probe_version() {
+    local version
+    version="$("$@" -c 'import sys; print("%d.%d" % sys.version_info[:2])' 2>/dev/null)" || return 1
+    printf '%s' "${version%$'\r'}"
+}
+
+in_range() {
+    [[ "$1" =~ ^3\.([0-9]+)$ ]] || return 1
+    (( BASH_REMATCH[1] >= min_minor && BASH_REMATCH[1] <= max_minor ))
+}
+
+range_text="3.${min_minor} to 3.${max_minor}"
+
+if [[ -n "${ANTIGRAVITY_SEO_PYTHON:-}" ]]; then
+    found="$(probe_version "${ANTIGRAVITY_SEO_PYTHON}" || true)"
+    if in_range "${found}"; then
+        exec "${ANTIGRAVITY_SEO_PYTHON}" "${runtime}" "$@"
+    fi
+    echo "ANTIGRAVITY_SEO_PYTHON must be Python ${range_text}. Found ${found:-no usable Python} at ${ANTIGRAVITY_SEO_PYTHON}." >&2
+    exit 2
+fi
+
+candidates=(python3 python)
+for minor in $(seq "${max_minor}" -1 "${min_minor}"); do
+    candidates+=("python3.${minor}")
+done
+
+for cmd in "${candidates[@]}"; do
+    if command -v "${cmd}" >/dev/null 2>&1; then
+        found="$(probe_version "${cmd}" || true)"
+        if in_range "${found}"; then
+            exec "${cmd}" "${runtime}" "$@"
+        fi
+    fi
+done
+
+echo "Antigravity SEO requires Python ${range_text}. None was found on your PATH." >&2
+exit 2
