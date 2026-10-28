@@ -51,3 +51,4 @@ done
 
 echo "Antigravity SEO requires Python ${range_text}. None was found on your PATH." >&2
 exit 2
+

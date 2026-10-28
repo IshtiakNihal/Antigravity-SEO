@@ -89,3 +89,4 @@ if __name__ == "__main__":
             safe, reason = is_safe_url(url)
             assert safe == expected, f"Failed for {url}: got {safe}, expected {expected} ({reason})"
         print("All self-test cases passed successfully!")
+

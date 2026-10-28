@@ -1,55 +1,45 @@
 # Security Policy
 
-## Reporting a Vulnerability
+Antigravity SEO is an autonomous agent framework that runs locally on your workstation inside Google Antigravity. We treat the security of our users and their development environments with the highest priority.
 
-If you discover a security vulnerability in Antigravity SEO, please report it responsibly. Do **not** open a public issue.
+---
 
-1. Open a private [GitHub Security Advisory](https://github.com/IshtiakNihal/Antigravity-SEO/security/advisories/new) on this repository. Private vulnerability reporting is enabled on this project.
-2. If the advisory form is unavailable to you, open a public issue titled *"Security contact request"* with **no technical details**. The maintainer will reply with a private, secure communication channel.
+## Reporting a Security Vulnerability
 
-When reporting, please include:
-- A concise description of the vulnerability and its potential security impact.
-- A minimal proof-of-concept / reproducer (target URL, CLI command, payload, or test case).
-- Affected environment, OS, and Python version.
-- Any suggested fix or remediation if available.
+If you discover a security issue or vulnerability in Antigravity SEO, please report it responsibly. **Do not open a public issue.**
+
+1. Open a private [GitHub Security Advisory](https://github.com/IshtiakNihal/Antigravity-SEO/security/advisories/new).
+2. If you are unable to access the advisory form, open a public GitHub issue titled:
+   `"Security Contact Request - [Brief Topic]"` with **no technical details or exploit code**. The maintainer (**Ahmed Ishtiak Nihal**) will contact you privately.
+
+Please include:
+* Description of the vulnerability and its potential impact.
+* Minimal reproduction steps (command line, target payload, or script).
+* Environment details (Operating System, Python version, Antigravity version).
+* Suggested remediation if available.
+
+---
+
+## Threat Model & Defenses
+
+Antigravity SEO executes within a local agent harness and interacts with user-supplied URLs. We enforce strict defensive boundaries:
+
+1. **SSRF (Server-Side Request Forgery) Mitigation**:
+   * All network fetch operations must pass through [`scripts/url_safety.py`](scripts/url_safety.py).
+   * Requests targeting private IP ranges (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`), loopback (`127.0.0.1`, `localhost`), link-local (`169.254.0.0/16`), and cloud instance metadata endpoints (`169.254.169.254`) are blocked prior to connection.
+
+2. **ReDoS & Parser Safety**:
+   * All regular expression evaluators (meta tag parsers, schema extractors, entity detectors) enforce strict length limits to prevent catastrophic backtracking.
+
+3. **Zero Secret Leakage**:
+   * Antigravity SEO never records, logs, or exports API keys, auth tokens, or session credentials. `.env` files are blocked via `.gitignore`.
 
 ---
 
 ## Coordinated Disclosure
 
-Antigravity SEO follows a **90-day coordinated disclosure** policy:
-
-| Timeline | Milestone |
-|---:|---|
-| **Day 0** | Maintainer acknowledges receipt of the vulnerability report. |
-| **Day ≤ 3** | Initial triage: severity rating (CVSS v3.1) and verification of reproducibility. |
-| **Day ≤ 14** | Remediation / patch candidate prepared and tested. |
-| **Day ≤ 30** | Fix released in a patched version; reporter credited in release notes (unless opt-out requested). |
-| **Day ≤ 90** | Public security advisory published. |
-
----
-
-## Supported Versions
-
-| Version Line | Status | Notes |
-|---|---|---|
-| **v1.x (Current)** |  Fully Supported | Active development; all security patches and functional updates. |
-| **Pre-release** | ⚠️ Best-effort | Development branches; upgrade to main. |
-
----
-
-## Threat Model & Mitigations
-
-Antigravity SEO is an autonomous audit and optimization toolkit that executes inside the user's local Google Antigravity workstation. It accepts user-supplied target domains and URLs, fetches remote web resources, and parses structured data.
-
-### 1. Server-Side Request Forgery (SSRF) & Untrusted Targets
-* **Threat**: An audited target URL or redirected location might attempt to pivot into local-network services (`localhost`, `127.0.0.1`, `10.0.0.0/8`, `192.168.0.0/16`, `169.254.169.254` cloud metadata endpoints).
-* **Mitigation**: All fetch operations must route through strict URL safety guards (`scripts/url_safety.py`). Private, loopback, multicast, link-local, and reserved IP ranges are blocked prior to HTTP resolution.
-
-### 2. Malicious Content Injection & Regular Expression DoS (ReDoS)
-* **Threat**: Malicious target web pages could craft catastrophic backtracking strings to hang parsing agents.
-* **Mitigation**: All regex parsers for meta tags, Schema.org JSON-LD, and HTML heading trees enforce input size boundaries and execution timeouts.
-
-### 3. Credential & Environment Protection
-* **Threat**: Leaking API keys (Google OAuth, PageSpeed, Bing, Moz) into logs, generated Markdown files, or Git history.
-* **Mitigation**: Antigravity SEO strictly prohibits committing credentials or secrets. Environment variables and configuration files (`.env`) are excluded via `.gitignore` and sanitized during all report rendering.
+We follow a **90-day coordinated disclosure policy**:
+* **Day 0**: Acknowledgment of receipt.
+* **Within 3 Days**: Initial severity triage and reproduction.
+* **Within 14 Days**: Remediation candidate tested.
+* **Within 30 Days**: Security patch released to main branch.

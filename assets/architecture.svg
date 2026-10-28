@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c111d"/>
+      <stop offset="100%" stop-color="#070a12"/>
+    </linearGradient>
+    <linearGradient id="boxBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .node-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 700; font-size: 14px; fill: #ffffff; }
+    .node-subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 400; font-size: 11px; fill: #94a3b8; }
+    .header-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 22px; fill: #ffffff; }
+    .mono { font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 11px; fill: #38bdf8; }
+  </style>
+
+  <!-- Background -->
+  <rect width="960" height="420" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <g transform="translate(480, 40)" text-anchor="middle">
+    <text x="0" y="0" class="header-text">Antigravity SEO Multi-Agent Architecture</text>
+    <text x="0" y="24" class="node-subtitle">Parallel autonomous execution inside Google Antigravity</text>
+  </g>
+
+  <!-- Level 1: Input -->
+  <g transform="translate(40, 150)">
+    <rect x="0" y="0" width="160" height="110" rx="10" fill="url(#boxBlue)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="160" height="4" rx="2" fill="#4285F4"/>
+    <text x="80" y="32" class="node-title" text-anchor="middle">User / Prompt</text>
+    <text x="80" y="56" class="mono" text-anchor="middle">/seo audit &lt;url&gt;</text>
+    <text x="80" y="80" class="node-subtitle" text-anchor="middle">Antigravity CLI (agy)</text>
+    <text x="80" y="96" class="node-subtitle" text-anchor="middle">or Antigravity IDE</text>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <path d="M200 205 L260 205" stroke="#4285F4" stroke-width="2" stroke-dasharray="4,4"/>
+  <polygon points="265,205 257,200 257,210" fill="#4285F4"/>
+
+  <!-- Level 2: Master Orchestrator -->
+  <g transform="translate(270, 130)">
+    <rect x="0" y="0" width="190" height="150" rx="10" fill="url(#boxBlue)" stroke="#4285F4" stroke-width="2"/>
+    <rect x="0" y="0" width="190" height="4" rx="2" fill="#4285F4"/>
+    <text x="95" y="32" class="node-title" text-anchor="middle">Master Orchestrator</text>
+    <text x="95" y="52" class="mono" text-anchor="middle">skills/seo/SKILL.md</text>
+    <text x="95" y="80" class="node-subtitle" text-anchor="middle">• Industry Classifier</text>
+    <text x="95" y="100" class="node-subtitle" text-anchor="middle">• URL Safety Engine</text>
+    <text x="95" y="120" class="node-subtitle" text-anchor="middle">• Dispatch Coordinator</text>
+    <text x="95" y="140" class="node-subtitle" text-anchor="middle">• Synthesis Engine</text>
+  </g>
+
+  <!-- Fan Out Arrows to Level 3 -->
+  <path d="M460 170 L520 100" stroke="#60a5fa" stroke-width="1.5"/>
+  <path d="M460 190 L520 160" stroke="#34D399" stroke-width="1.5"/>
+  <path d="M460 215 L520 220" stroke="#FBBF24" stroke-width="1.5"/>
+  <path d="M460 240 L520 280" stroke="#F87171" stroke-width="1.5"/>
+  <path d="M460 260 L520 340" stroke="#A78BFA" stroke-width="1.5"/>
+
+  <!-- Level 3: Specialist Agent Squad -->
+  <g transform="translate(525, 75)">
+    <!-- Agent 1 -->
+    <rect x="0" y="0" width="180" height="45" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+    <text x="12" y="22" class="node-title" font-size="12">seo-technical</text>
+    <text x="12" y="36" class="node-subtitle" font-size="10">Crawls, CWV, Status Codes</text>
+
+    <!-- Agent 2 -->
+    <rect x="0" y="60" width="180" height="45" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+    <text x="12" y="82" class="node-title" font-size="12">seo-geo</text>
+    <text x="12" y="96" class="node-subtitle" font-size="10">AI Citations &amp; Entity Density</text>
+
+    <!-- Agent 3 -->
+    <rect x="0" y="120" width="180" height="45" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+    <text x="12" y="142" class="node-title" font-size="12">seo-aeo</text>
+    <text x="12" y="156" class="node-subtitle" font-size="10">10-FAQ &amp; Google AI Overviews</text>
+
+    <!-- Agent 4 -->
+    <rect x="0" y="180" width="180" height="45" rx="6" fill="#1e293b" stroke="#ef4444" stroke-width="1"/>
+    <text x="12" y="202" class="node-title" font-size="12">seo-schema</text>
+    <text x="12" y="216" class="node-subtitle" font-size="10">Schema.org JSON-LD</text>
+
+    <!-- Agent 5 -->
+    <rect x="0" y="240" width="180" height="45" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="12" y="262" class="node-title" font-size="12">seo-ecommerce / local</text>
+    <text x="12" y="276" class="node-subtitle" font-size="10">SKU, Pricing, Map Pack</text>
+  </g>
+
+  <!-- Fan In Arrows to Level 4 -->
+  <path d="M705 100 L755 180" stroke="#60a5fa" stroke-width="1.5"/>
+  <path d="M705 160 L755 195" stroke="#34D399" stroke-width="1.5"/>
+  <path d="M705 220 L755 210" stroke="#FBBF24" stroke-width="1.5"/>
+  <path d="M705 280 L755 225" stroke="#F87171" stroke-width="1.5"/>
+  <path d="M705 340 L755 240" stroke="#A78BFA" stroke-width="1.5"/>
+
+  <!-- Level 4: Deliverable Output -->
+  <g transform="translate(760, 145)">
+    <rect x="0" y="0" width="165" height="120" rx="10" fill="url(#boxBlue)" stroke="#34A853" stroke-width="2"/>
+    <rect x="0" y="0" width="165" height="4" rx="2" fill="#34A853"/>
+    <text x="82" y="30" class="node-title" text-anchor="middle">Prioritized Plan</text>
+    <text x="82" y="55" class="node-subtitle" text-anchor="middle">• Ranked by Impact</text>
+    <text x="82" y="75" class="node-subtitle" text-anchor="middle">• Falsifiable Tests</text>
+    <text x="82" y="95" class="node-subtitle" text-anchor="middle">• Copyable Code Diffs</text>
+  </g>
+</svg>

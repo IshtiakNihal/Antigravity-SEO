@@ -1,7 +1,7 @@
 ---
 name: seo-performance
 description: Performance analyzer. Measures and evaluates Core Web Vitals and page load performance.
-model: sonnet
+model: gemini-1.5-pro
 maxTurns: 35
 tools: Read, Bash, Write
 ---
@@ -25,7 +25,7 @@ Google evaluates the **75th percentile** of page visits, 75% of visits must meet
 ## When Analyzing Performance
 
 1. Use PageSpeed Insights API if available
-2. Use `"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run render_page.py <URL> --mode auto --json` before HTML/source inspection so SPA content is visible when needed
+2. Use `"${CLAUDE_PLUGIN_ROOT}/scripts/antigravity-seo" run render_page.py <URL> --mode auto --json` before HTML/source inspection so SPA content is visible when needed
 3. Provide specific, actionable optimization recommendations
 4. Prioritize by expected impact
 
@@ -71,10 +71,10 @@ Google evaluates the **75th percentile** of page visits, 75% of visits must meet
 
 ```bash
 # PageSpeed Insights API (uses header-based API key handling)
-"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run pagespeed_check.py URL --json
+"${CLAUDE_PLUGIN_ROOT}/scripts/antigravity-seo" run pagespeed_check.py URL --json
 
 # SPA-aware HTML/render inspection
-"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run render_page.py URL --mode auto --json
+"${CLAUDE_PLUGIN_ROOT}/scripts/antigravity-seo" run render_page.py URL --mode auto --json
 
 # Lighthouse CLI
 npx lighthouse URL --output json
@@ -84,8 +84,8 @@ npx lighthouse URL --output json
 
 If Google API credentials are configured, prefer CrUX field data over Lighthouse lab data for CWV assessment:
 ```bash
-"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run pagespeed_check.py URL --json
-"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run crux_history.py URL --json
+"${CLAUDE_PLUGIN_ROOT}/scripts/antigravity-seo" run pagespeed_check.py URL --json
+"${CLAUDE_PLUGIN_ROOT}/scripts/antigravity-seo" run crux_history.py URL --json
 ```
 Field data (28-day Chrome user average) is more representative than lab data (single Lighthouse run). Use lab data as fallback when CrUX returns 404 (insufficient traffic).
 

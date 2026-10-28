@@ -1,35 +1,18 @@
 # Privacy Policy
 
-Antigravity SEO is designed with a strict **local-first, privacy-by-default architecture**.
-
-## What Stays 100% Local
-
-- **Zero Telemetry**: Antigravity SEO does not collect, log, track, or phone home any analytics, telemetry, user identities, or prompt histories.
-- **Local Analysis**: All website audits, HTML parsers, technical scrapers, Core Web Vitals evaluations, entity density calculations, and schema validations execute entirely on your machine within your local Google Antigravity session.
-- **Local Reports**: All generated Markdown audits, JSON logs, and optimization plans are stored on your local filesystem under your project or Antigravity workspace.
+Antigravity SEO is engineered with a strict **Local-First, Privacy-by-Default** philosophy.
 
 ---
 
-## Network Activity & External APIs
+## 1. Zero Telemetry & Tracking
+* **No Telemetry**: Antigravity SEO does not collect, transmit, or store any analytics, tracking pixels, usage statistics, or user activity logs.
+* **No Cloud Middleware**: Your prompts, target URLs, and site audit reports are never sent to an intermediary server.
 
-### 1. Default Audit Operations
-When you run commands like `/seo audit <url>`, `/seo technical <url>`, or `/seo schema <url>`:
-- The skill issues standard outbound HTTP/HTTPS requests **only to the target URL** you explicitly supplied.
-- No intermediary proxy or tracking server is involved.
+## 2. What Executes on Your Machine
+* All website crawling, DOM parsing, technical scoring, Core Web Vitals audits, and Schema.org validations happen **entirely on your local machine** within your Google Antigravity environment.
+* Generated reports (Markdown, JSON) remain solely on your local filesystem.
 
-### 2. Optional Third-Party Services
-If you choose to integrate optional search engine APIs by supplying your own keys, Antigravity SEO contacts only the official vendor endpoints:
-
-| Service / Tool | Destination Endpoint | Data Transmitted | Privacy Policy |
-|---|---|---|---|
-| **Google Search Console** | `searchconsole.googleapis.com` | Target site URLs, query parameters | [Google Privacy](https://policies.google.com/privacy) |
-| **Google PageSpeed Insights** | `pagespeedonline.googleapis.com` | Target URL to test speed & CWV | [Google Privacy](https://policies.google.com/privacy) |
-| **Bing Webmaster / IndexNow** | `api.bing.com` / `api.indexnow.org` | Target domain, submitted URLs | [Microsoft Privacy](https://privacy.microsoft.com/) |
-| **Moz Link Explorer** | `lsapi.seomoz.com` | Target domain name for backlink metrics | [Moz Privacy](https://moz.com/privacy-policy) |
-
----
-
-## Security of API Credentials
-
-- All credentials, tokens, and OAuth secrets remain under your local control.
-- Never commit `.env` files or hardcode API keys into version control.
+## 3. External API Communication
+Antigravity SEO only communicates with external web endpoints when:
+1. Fetching the specific website URL you instructed it to audit (e.g. `/seo audit <url>`).
+2. You explicitly configure official search engine API credentials (e.g., Google Search Console, Google PageSpeed Insights, Microsoft Bing IndexNow). In these instances, requests are dispatched directly and securely to the official vendor endpoints.

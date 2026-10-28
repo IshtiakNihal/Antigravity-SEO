@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use Antigravity SEO in your research, tools, or audits, please cite it as below."
+authors:
+  - family-names: "Nihal"
+    given-names: "Ahmed Ishtiak"
+    alias: "IshtiakNihal"
+title: "Antigravity SEO: Autonomous Multi-Agent SEO, GEO & AEO Framework for Google Antigravity"
+version: 1.0.0
+date-released: 2026-10-28
+url: "https://github.com/IshtiakNihal/Antigravity-SEO"
+license: MIT
+keywords:
+  - "seo"
+  - "google-antigravity"
+  - "antigravity"
+  - "geo"
+  - "aeo"
+  - "technical-seo"
+  - "schema-org"
+  - "ai-search"

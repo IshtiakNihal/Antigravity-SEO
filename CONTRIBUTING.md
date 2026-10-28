@@ -1,63 +1,52 @@
 # Contributing to Antigravity SEO
 
-Thank you for your interest in contributing to **Antigravity SEO**! We welcome developers, technical SEOs, prompt engineers, and AI researchers from all backgrounds.
+We welcome contributions from developers, SEO engineers, and AI researchers working with Google Antigravity!
 
 ---
 
-## How to Get Involved
-
-### 1. Reporting Bugs
-Before creating an issue, search the [Issues tab](https://github.com/IshtiakNihal/Antigravity-SEO/issues) to verify if the issue has already been reported.
-
-When submitting a bug report:
-- Use the **Bug Report** issue template.
-- Include your Operating System, Antigravity CLI / IDE version, and Python version.
-- Provide the exact command executed (e.g. `/seo technical https://example.com`).
-- Include relevant terminal logs or error tracebacks.
-
-### 2. Suggesting Enhancements & New Skills
-- Open a **Feature Request** issue to propose new audits, agent roles, or search engine adaptations (e.g. Apple Intelligence, DuckDuckGo AI).
-- Clearly explain the problem it solves and how you envision the command syntax.
-
-### 3. Pull Request Guidelines
+## Getting Started
 
 1. **Fork the Repository**:
+   Create a fork of `https://github.com/IshtiakNihal/Antigravity-SEO` on GitHub.
+
+2. **Clone & Set Up Locally**:
    ```bash
    git clone https://github.com/YOUR_USERNAME/Antigravity-SEO.git
    cd Antigravity-SEO
-   git checkout -b feature/your-awesome-feature
-   ```
 
-2. **Set Up Development Environment**:
-   ```bash
+   # Create virtual environment
    python -m venv .venv
-   # On Windows:
+
+   # Activate virtual environment
+   # Windows:
    .venv\Scripts\activate
-   # On macOS/Linux:
+   # macOS / Linux:
    source .venv/bin/activate
 
+   # Install dependencies
    pip install -r requirements.txt
    ```
 
 3. **Run the Test Suite**:
    ```bash
-   python -m unittest discover tests
-   # or
-   pytest tests/
+   python -m unittest discover tests -v
    ```
-   *Ensure all unit tests pass before submitting code.*
-
-4. **Code Quality Standards**:
-   - Write clean, modular Python with descriptive docstrings.
-   - Enforce SSRF protection via `scripts/url_safety.py` for any new web-scraping features.
-   - Maintain zero telemetry and local execution integrity.
-
-5. **Submit Your Pull Request**:
-   - Open a PR against the `main` branch.
-   - Fill out the provided PR template describing your changes, test evidence, and any relevant issue numbers.
+   *All tests must pass prior to opening a pull request.*
 
 ---
 
-## Governance & Recognition
+## Contribution Guidelines
 
-All contributors will be recognized in the repository's contributors list! Please adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
+* **Google Antigravity Focus**: All skills and agent definitions must be optimized natively for Google Antigravity and Gemini models (`gemini-1.5-pro`, `gemini-1.5-flash`).
+* **Security First**: Any tool making external HTTP requests must integrate with `scripts/url_safety.py` to prevent SSRF vulnerabilities.
+* **Deterministic Tests**: Add unit tests in `tests/test_audit.py` for any new parser, score calculation, or validation script.
+* **Open Source Attribution**: Maintain academic and professional integrity—never copy proprietary assets or third-party screenshots.
+
+---
+
+## Submitting Pull Requests
+
+1. Create a feature branch: `git checkout -b feature/your-feature-name`.
+2. Commit your changes with clear, descriptive commit messages.
+3. Push to your fork: `git push origin feature/your-feature-name`.
+4. Open a Pull Request against `main`. Complete the checklist in `.github/PULL_REQUEST_TEMPLATE.md`.

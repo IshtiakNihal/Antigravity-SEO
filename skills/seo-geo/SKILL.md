@@ -232,7 +232,7 @@ name the specific user-agent that was checked and the specific capability it gov
 
 ## llms.txt Standard
 
-Read `references/llmstxt-evidence.md` for the primary-source evidence (Mueller, Illyes, SE Ranking 300k-domain study, OtterlyAI server-log audit) on why `/llms.txt` is not currently a citation lever for major AI search systems. claude-seo reports presence but assigns no citation-ranking weight.
+Read `references/llmstxt-evidence.md` for the primary-source evidence (Mueller, Illyes, SE Ranking 300k-domain study, OtterlyAI server-log audit) on why `/llms.txt` is not currently a citation lever for major AI search systems. antigravity-seo reports presence but assigns no citation-ranking weight.
 
 > **Google now states this explicitly.** Google's AI optimization guide, published
 > 2026-05-15 (llms.txt guidance clarified 2026-06-15, last updated 2026-07-10), says `llms.txt` and other AI-text files are
@@ -332,7 +332,7 @@ Google added many AI citation/source surfaces across AI Overviews **and** AI Mod
 
 For AI Overviews or AI Mode visibility changes, check the dated product and
 core-update entries first:
-`"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run seo_updates.py --kind product --kind core --json`.
+`"${ANTIGRAVITY_SKILL_ROOT}scripts/antigravity-seo" run seo_updates.py --kind product --kind core --json`.
 Treat a stale ledger (`freshness.stale`) as incomplete.
 
 ## Output
