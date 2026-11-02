@@ -24,4 +24,3 @@ if (-not $pythonCmd) {
 
 & $pythonCmd.Source $runtime @ArgsList
 exit $LASTEXITCODE
-
